@@ -1,0 +1,11 @@
+extends ../layouts/application.pug
+
+block header
+  = t('views.statuses.edit')
+
+block content
+  .card.bg-white.p-4.col-12.col-md-6
+    +formFor()(action=route('statuses') + `/${status.id}` method='post')
+      +input(status, 'name', 'views.statuses.name', errors)(type="text")
+      input(type="hidden" name="_method" value="PATCH")
+      +submit(status)(value=t('layouts.actions.save'))

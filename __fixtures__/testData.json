@@ -1,0 +1,26 @@
+{
+  "users": {
+    "create": {
+      "firstName": "Ruthie",
+      "lastName": "Robel",
+      "email": "Emiliano80@gmail.com",
+      "password": "_8wqOqLmq4wHMlE"
+    },
+    "new": {
+      "email": "Karolann.Stokes33@yahoo.com",
+      "password": "LfAIS4ZaGOhEv3E"
+    },
+    "existing": {
+      "email": "Rosalee.Ernser@hotmail.com",
+      "password": "C97KUBBCz4RVlYe"
+    }
+  },
+  "statuses": {
+    "new": {
+      "name": "New status"
+    },
+    "existing": {
+      "name": "Working"
+    }
+  }
+}

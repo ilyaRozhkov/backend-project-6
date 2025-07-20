@@ -1,0 +1,24 @@
+extends ../layouts/application.pug
+
+block header
+  h1= t('layouts.application.users')
+
+block content
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th= t('views.users.id')
+        th= t('views.users.fullName')
+        th= t('views.users.email')
+        th= t('views.users.createdAt')
+        th= t('views.users.actions')
+    tbody
+      each user in users
+        tr
+          td= user.id
+          td= user.firstName + ' ' + user.lastName
+          td= user.email
+          td= formatDate(user.createdAt)
+          td.d-flex.gap-1
+            a.btn.btn-primary.btn-sm(href=route('users') + `/${user.id}/edit`)= t('views.users.edit')
+            +buttonTo(route('users') + `/${user.id}`, 'DELETE').btn.btn-danger.btn-sm(value= t('views.users.delete'))

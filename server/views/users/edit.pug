@@ -1,0 +1,14 @@
+extends ../layouts/application.pug
+
+block header
+  = t('views.users.edit')
+
+block content
+  .card.bg-white.p-4.col-12.col-md-6
+    +formFor()(action=route('users') + `/${user.id}` method='post')
+      +input(user, 'firstName', 'views.users.firstName', errors)(type="text")
+      +input(user, 'lastName', 'views.users.lastName', errors)(type="text")
+      +input(user, 'email', 'views.users.email', errors)(type="text")
+      +input(user, 'password', 'views.users.password', errors)(type="password")
+      input(type="hidden" name="_method" value="PATCH")
+      +submit(user)(value=t('layouts.actions.save'))
